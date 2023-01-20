@@ -9,6 +9,7 @@ export default {
         return {
             project: null,
             api_base_url: 'http://127.0.0.1:8000',
+            loading: true,
         }
     },
     mounted() {
@@ -18,7 +19,7 @@ export default {
         axios.get(url)
             .then(response => {
                 if (response.data.success) {
-                    this.project = response.data.results
+                    this.project = response.data.project
                     this.loading = false
                 } else {
                     /*404*/
@@ -33,8 +34,11 @@ export default {
 
 <template>
     <AppBanner :title="$route.params.slug"></AppBanner>
-    <h1>{{ project.title }}</h1>
-    <h2>{{ project.body }}</h2>
+    <div class="container" v-if="!loading">
+        <h1>{{ project.title }}</h1>
+        <h2>{{ project.body }}</h2>
+    </div>
+    <div v-else> no project</div>
 </template>
 
 <style lang="scss" scoped>
