@@ -5,7 +5,7 @@ export default {
 </script>
 
 <template>
-    <nav class="navbar navbar-expand-sm navbar-light bg-light border-bottom">
+    <nav class="navbar navbar-expand-sm position-sticky navbar-dark border-bottom">
         <div class="container">
             <a class="navbar-brand" href="/">Navbar</a>
             <button class="navbar-toggler d-lg-none" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav"
@@ -19,14 +19,14 @@ export default {
                                 class="visually-hidden">(current)</span></RouterLink>
                     </li>
                     <li class="nav-item">
-                        <RouterLink class="nav-link" :to="{ name: 'project' }">Project</RouterLink>
+                        <RouterLink class="nav-link active" :to="{ name: 'project' }">Project</RouterLink>
                     </li>
                     <li class="nav-item">
-                        <RouterLink class="nav-link" :to="{ name: 'about' }">About</RouterLink>
+                        <RouterLink class="nav-link active" :to="{ name: 'about' }">About</RouterLink>
 
                     </li>
                     <li class="nav-item">
-                        <RouterLink class="nav-link" :to="{ name: 'contacts' }">Contacts</RouterLink>
+                        <RouterLink class="nav-link active" :to="{ name: 'contacts' }">Contacts</RouterLink>
 
                     </li>
                 </ul>
@@ -39,4 +39,8 @@ export default {
 
 <style lang="scss" scoped>
 @use '../styles/general.scss';
+
+.navbar {
+    border-color: #1f1f38;
+}
 </style>
