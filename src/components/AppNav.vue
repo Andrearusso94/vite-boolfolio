@@ -42,5 +42,15 @@ export default {
 
 .navbar {
     border-color: #1f1f38;
+    z-index: 100;
+    top: 0;
+    left: 0;
+
+}
+
+a:hover {
+    border-radius: 4rem;
+    background-color: #696973;
+
 }
 </style>
