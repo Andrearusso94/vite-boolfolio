@@ -23,13 +23,7 @@ export default {
                 })
         }
     },
-    /*  getImagePath(path) {
-          console.log(path);
-          if (path) {
-              return this.base_api_url + '/storage/' + path
-          }
-          return 'null'
-      },*/
+
     prevPage(url) {
         console.log(url)
         this.getProject(url)
@@ -58,8 +52,8 @@ export default {
                     <p>
                         {{ project.body }}
                     </p>
-                    <!-- <router-link :to="{ name: 'single-project', params: { slug: project.slug } }">Read
-                        more</router-link>-->
+                    <router-link :to="{ name: 'single-project', params: { slug: project.slug } }">Read
+                        more</router-link>
                 </div>
 
 

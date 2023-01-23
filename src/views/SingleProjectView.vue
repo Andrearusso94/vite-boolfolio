@@ -29,6 +29,7 @@ export default {
                 console.log(error)
             })
     }
+
 }
 </script>
 
@@ -37,6 +38,7 @@ export default {
     <div class="container" v-if="!loading">
         <h1>{{ project.title }}</h1>
         <h2>{{ project.body }}</h2>
+
     </div>
     <div v-else> no project</div>
 </template>
