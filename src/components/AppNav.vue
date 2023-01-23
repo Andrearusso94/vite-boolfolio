@@ -5,6 +5,7 @@ export default {
 </script>
 
 <template>
+    <!--top navbar-->
     <nav class="navbar navbar-expand-sm position-sticky navbar-dark border-bottom">
         <div class="container">
             <a class="navbar-brand" href="/">Navbar</a>
@@ -15,8 +16,8 @@ export default {
             <div class="collapse navbar-collapse" id="mainNav">
                 <ul class="navbar-nav ms-auto mt-2 mt-lg-0">
                     <li class="nav-item">
-                        <RouterLink class="nav-link active" :to="{ name: 'home' }" aria-current="page">Home <span
-                                class="visually-hidden">(current)</span></RouterLink>
+                        <RouterLink href="#home" class="nav-link active" :to="{ name: 'home' }" aria-current="page">
+                            Home<span class="visually-hidden"></span></RouterLink>
                     </li>
                     <li class="nav-item">
                         <RouterLink class="nav-link active" :to="{ name: 'project' }">Project</RouterLink>
@@ -35,6 +36,13 @@ export default {
         </div>
     </nav>
 
+
+
+
+
+
+
+
 </template>
 
 <style lang="scss" scoped>
@@ -45,6 +53,7 @@ export default {
     z-index: 100;
     top: 0;
     left: 0;
+    overflow: hidden;
 
 }
 
