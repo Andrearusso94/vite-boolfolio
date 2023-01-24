@@ -11,7 +11,7 @@ export default {
 <template>
     <!--home section-->
     <div class="container mt-3">
-        <div class="row">
+        <div class="row g-5">
             <div class="col-12 col-md-6 text-center">
                 <div class="my-card">
                     <h1>Andrea Russo</h1>
@@ -26,6 +26,18 @@ export default {
             </div>
         </div>
     </div>
+
+
+    <!--about section-->
+    <div class="container mt-5">
+        <h2 class="text-center">About Me</h2>
+        <div class="row text-center g-5 mt-5">
+            <div class="col-12 col-md-6 about">
+                <img src="../assets/undraw_programming_re_kg9v.svg" alt="">
+            </div>
+            <div class="col">ciao</div>
+        </div>
+    </div>
 </template>
 
 <style lang="scss" scoped>
@@ -33,5 +45,9 @@ export default {
 
 .container {
     color: white;
+}
+
+.about img {
+    width: 50%;
 }
 </style>

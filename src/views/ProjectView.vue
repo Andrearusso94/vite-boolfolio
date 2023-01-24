@@ -39,19 +39,30 @@ export default {
 <template>
     <section class="vue-home">
         <div class="container">
-            <div class="row" v-if="project">
+            <div class="row row-cols-md-2 row-cols-lg-3" v-if="project">
                 <div class="col" v-for="project in project.data">
-                    <div class="card">
+                    <div class="card text-center">
                         <div class="card-header">
-                            <img class="card-image rounded-top" :src="getImagePath(project.cover_image)" alt="">
+                            <img class="" :src="getImagePath(project.cover_image)" alt="">
                         </div>
                         <div class="card-body">
                             <h4>{{ project.title }}</h4>
+                            <div class="technology">
+                                <strong>Technology: </strong>
+                                <template v-if="project.technologys.lenght > 0">
+                                    <span v-for="technologys in project.technologys">
+                                        #{{ technologys.name }}
+                                    </span>
+                                </template>
+                                <template v-else>
+                                    <span>No tags.</span>
+                                </template>
+                            </div>
                             <p>
                                 {{ project.body }}
                             </p>
                             <router-link :to="{ name: 'single-project', params: { slug: project.slug } }">Read
-                                more</router-link>
+                                more</router-link> <span>or visit <a href="{{ $project.link }}">App</a></span>
                         </div>
                     </div>
                 </div>
@@ -62,5 +73,27 @@ export default {
 </template>
 
 <style lang="scss" scoped>
+@use '../styles/general.scss';
 
+.card {
+    margin: 10px;
+    background-color: black;
+    border-radius: 10px;
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    width: 300px;
+}
+
+.card-header img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+}
+
+.card-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
 </style>
