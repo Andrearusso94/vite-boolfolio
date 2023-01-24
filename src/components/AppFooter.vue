@@ -11,7 +11,7 @@ export default {
 
     <!--bottom navbar-->
 
-    <section id="bottom-navbar" class="mt-3 position fixed">
+    <section id="bottom-navbar" class="animate__animated animate__backInUp mt-3 position fixed">
         <div class="container text-center bottom-nav ">
             <div class="row row-cols-4">
                 <div class="col">
@@ -52,10 +52,10 @@ export default {
 
 .bottom-nav {
     height: 4rem;
-    padding: 0 2rem;
+
     background-color: #151527;
     border-radius: 3rem;
-    z-index: 1000;
+    z-index: 100;
     align-items: center;
     position: relative;
     display: grid
@@ -67,7 +67,7 @@ export default {
     color: white;
 }
 
-@media only screen and (max-width:470px) {
+@media only screen and (max-width:575px) {
     #bottom-navbar {
         display: block;
         margin: 0 auto;
@@ -75,6 +75,7 @@ export default {
 
     .bottom-nav {
         padding: 0;
+
     }
 }
 </style>

@@ -21,19 +21,15 @@ export default {
                 .catch(error => {
                     console.error(error.message)
                 })
-        }
+        },
+        getImagePath(path) {
+            console.log(path);
+            if (path) {
+                return this.base_api_url + '/storage/' + path
+            }
+            return 'null'
+        },
     },
-
-    prevPage(url) {
-        console.log(url)
-        this.getProject(url)
-    },
-    nextPage(url) {
-        console.log(url)
-        this.getProject(url)
-    },
-
-
     mounted() {
         this.getProject(this.base_api_url + '/api/project');
     }
@@ -43,53 +39,25 @@ export default {
 <template>
     <section class="vue-home">
         <div class="container">
-
-
             <div class="row" v-if="project">
                 <div class="col" v-for="project in project.data">
-                    <img class="card-image rounded-top" src="" alt="">
-                    <h4>{{ project.title }}</h4>
-                    <p>
-                        {{ project.body }}
-                    </p>
-                    <router-link :to="{ name: 'single-project', params: { slug: project.slug } }">Read
-                        more</router-link>
+                    <div class="card">
+                        <div class="card-header">
+                            <img class="card-image rounded-top" :src="getImagePath(project.cover_image)" alt="">
+                        </div>
+                        <div class="card-body">
+                            <h4>{{ project.title }}</h4>
+                            <p>
+                                {{ project.body }}
+                            </p>
+                            <router-link :to="{ name: 'single-project', params: { slug: project.slug } }">Read
+                                more</router-link>
+                        </div>
+                    </div>
                 </div>
-
-
-
             </div>
-
-
-
             <div v-else>Ciao</div>
         </div>
-
-
-        <!--
-        <nav aria-label="Page navigation" class="d-flex justify-content-center pt-5">
-            <ul class="pagination    ">
-                <li class="page-item" v-if="project.prev_page_url" @click="prevPage(project.prev_page_url)">
-                    <a class="page-link" aria-label="Previous">
-                        <span aria-hidden="true">&laquo;</span>
-                    </a>
-                </li>
-                <li class="page-item active" aria-current="page"><a class="page-link" href="#">{{
-                    project.current_page
-                }}</a></li>
-
-                <li class="page-item" v-if="project.next_page_url" @click="nextPage(project.next_page_url)">
-                    <a class="page-link" aria-label="Next">
-                        <span aria-hidden="true">&raquo;</span>
-                    </a>
-                </li>
-            </ul>
-        </nav>
-        -->
-
-
-
-
     </section>
 </template>
 
