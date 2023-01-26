@@ -61,8 +61,8 @@ export default {
 }
 
 a:hover {
-    border-radius: 4rem;
-    background-color: #696973;
+    border-radius: 1rem;
+    background-color: rgb(162, 190, 214);
 
 }
 </style>
