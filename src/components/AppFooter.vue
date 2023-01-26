@@ -44,16 +44,16 @@ export default {
 @use '../styles/general.scss';
 
 #bottom-navbar {
-    width: 100%;
-    height: 6rem;
+    width: 90%;
+    height: 4rem;
     display: none;
 
 }
 
 .bottom-nav {
-    height: 4rem;
-
-    background-color: #151527;
+    height: 3rem;
+    background-color: rgba(162, 190, 214, 1);
+    ;
     border-radius: 3rem;
     z-index: 100;
     align-items: center;
@@ -74,7 +74,7 @@ export default {
     }
 
     .bottom-nav {
-        padding: 0;
+        padding: 0 2;
 
     }
 }

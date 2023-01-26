@@ -7,7 +7,7 @@ export default {
 <template>
     <!--top navbar-->
     <nav class="navbar navbar-expand-sm position-sticky navbar-dark border-bottom">
-        <div class="container">
+        <div class="container-fluid">
             <a class="navbar-brand" href="/">
                 Andrea Russo
             </a>
@@ -51,8 +51,8 @@ export default {
 @use '../styles/general.scss';
 
 .navbar {
-    border-color: #1f1f38;
-    background-color: black;
+
+    background-color: rgba(36, 70, 108, 1);
     z-index: 100;
     top: 0;
     left: 0;

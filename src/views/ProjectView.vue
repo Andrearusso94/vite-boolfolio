@@ -49,20 +49,24 @@ export default {
                             <h4>{{ project.title }}</h4>
                             <div class="technology">
                                 <strong>Technology: </strong>
-                                <template v-if="project.technologys.lenght > 0">
+                                <p>{{ project.technologys.length }}</p>
+                                <div v-if="project.technologys.length > 0">
                                     <span v-for="technologys in project.technologys">
                                         #{{ technologys.name }}
                                     </span>
-                                </template>
-                                <template v-else>
+                                </div>
+                                <div v-else>
                                     <span>No tags.</span>
-                                </template>
+                                </div>
                             </div>
+
+
+
                             <p>
                                 {{ project.body }}
                             </p>
                             <router-link :to="{ name: 'single-project', params: { slug: project.slug } }">Read
-                                more</router-link> <span>or visit <a href="{{ $project.link }}">App</a></span>
+                                more</router-link> <span>or visit <a :href="project.link">App</a></span>
                         </div>
                     </div>
                 </div>
@@ -77,7 +81,7 @@ export default {
 
 .card {
     margin: 10px;
-    background-color: black;
+    background-color: rgba(162, 190, 214, 1);
     border-radius: 10px;
     box-shadow: 0 2px 20px rgba(0, 0, 0, 0.2);
     overflow: hidden;

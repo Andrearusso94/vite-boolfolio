@@ -28,7 +28,7 @@ export default {
 }
 
 body {
-    background-color: #1f1f38;
+    background-color: rgba(36, 70, 108, 1);
     color: white;
 }
 </style>

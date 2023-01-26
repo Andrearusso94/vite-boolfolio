@@ -1,11 +1,42 @@
 <script>
 
-
+import axios from 'axios';
 export default {
-
     name: "HomeView",
+    components: {
 
-} 
+    },
+    data() {
+        return {
+            project: null,
+            base_api_url: 'http://127.0.0.1:8000',
+        };
+    },
+    methods: {
+        getProject(url) {
+            axios
+                .get(url)
+                .then(response => {
+                    console.log(response);
+                    this.project = response.data;
+                })
+                .catch(error => {
+                    console.error(error.message)
+                })
+        },
+        getImagePath(path) {
+            console.log(path);
+            if (path) {
+                return this.base_api_url + '/storage/' + path
+            }
+            return 'null'
+        },
+    },
+    mounted() {
+        this.getProject(this.base_api_url + '/api/project');
+    }
+}
+
 </script>
 
 <template>
@@ -38,6 +69,10 @@ export default {
             <div class="col">ciao</div>
         </div>
     </div>
+
+
+
+
 </template>
 
 <style lang="scss" scoped>
