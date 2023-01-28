@@ -43,13 +43,13 @@ export default {
                 <div class="col" v-for="project in project.data">
                     <div class="card text-center">
                         <div class="card-header">
-                            <img class="" :src="getImagePath(project.cover_image)" alt="">
+                            <router-link :to="{ name: 'single-project', params: { slug: project.slug } }"> <img class=""
+                                    :src="getImagePath(project.cover_image)" alt=""> </router-link>
                         </div>
                         <div class="card-body">
-                            <h4>{{ project.title }}</h4>
+                            <h4 class="text-center fw-bold">{{ project.title }}</h4>
                             <div class="technology">
                                 <strong>Technology: </strong>
-                                <p>{{ project.technologys.length }}</p>
                                 <div v-if="project.technologys.length > 0">
                                     <span v-for="technologys in project.technologys">
                                         #{{ technologys.name }}
@@ -59,14 +59,15 @@ export default {
                                     <span>No tags.</span>
                                 </div>
                             </div>
-
-
-
                             <p>
                                 {{ project.body }}
                             </p>
-                            <router-link :to="{ name: 'single-project', params: { slug: project.slug } }">Read
-                                more</router-link> <span>or visit <a :href="project.link">App</a></span>
+                            <div class="container buttons justify-content-center  d-flex">
+
+                                <a :href="project.link" class="button mx-2 l">Link</a>
+
+                            </div>
+
                         </div>
                     </div>
                 </div>
@@ -85,12 +86,11 @@ export default {
     border-radius: 10px;
     box-shadow: 0 2px 20px rgba(0, 0, 0, 0.2);
     overflow: hidden;
-    width: 300px;
+    width: 325px;
 }
 
 .card-header img {
     width: 100%;
-    height: 300px;
     object-fit: cover;
 }
 
@@ -98,6 +98,27 @@ export default {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: flex-start;
+}
+
+a {
+    text-decoration: none;
+}
+
+.button {
+    margin-left: 0 5rem;
+    font-size: 1rem;
+    color: #4db5ff;
+    cursor: pointer;
+    padding: 0.75rem 1.2rem;
+    border: 1px solid #4db5ff;
+    border-radius: 0.5rem;
+    background: transparent;
+
+}
+
+.button:hover {
+    color: rgba(162, 190, 214, 1);
+    background-color: rgba(36, 70, 108, 1);
+    border-color: rgba(36, 70, 108, 1);
 }
 </style>

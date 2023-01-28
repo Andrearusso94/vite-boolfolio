@@ -9,6 +9,7 @@ export default {
 
 
 
+
     <!--bottom navbar-->
 
     <section id="bottom-navbar" class="animate__animated animate__backInUp mt-3 position fixed">

@@ -30,5 +30,8 @@ export default {
 body {
     background-color: rgba(36, 70, 108, 1);
     color: white;
+    font-family: 'Noto Serif TC', serif;
+    font-family: 'Old Standard TT', serif;
+    font-family: 'Roboto Mono', monospace;
 }
 </style>

@@ -103,9 +103,6 @@ export default {
                                 <span>No tags.</span>
                             </div>
                         </div>
-
-
-
                         <p>
                             {{ project.body }}
                         </p>
@@ -116,7 +113,7 @@ export default {
             </div>
         </div>
         <div v-else>Ciao</div>
-
+        <!--footer section-->
 
     </div>
 
