@@ -115,7 +115,7 @@ export default {
             </div>
         </div>
         <div v-else>Ciao</div>
-        <!--footer section-->
+
 
     </div>
 
